@@ -3,11 +3,17 @@ import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 // import Header from "../components/header"
 
 function App({ data }) {
   return (
     <Layout>
+      <SEO
+        title={data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
+        meta={[]}
+      />
       <div>
         <h1
           css={css`
@@ -15,7 +21,7 @@ function App({ data }) {
             border-bottom: 1px solid;
           `}
         >
-          100 Days of Gatsby
+          {data.site.siteMetadata.title}
         </h1>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -66,6 +72,13 @@ export const query = graphql`
           }
           excerpt
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        description
+        author
       }
     }
   }

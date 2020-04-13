@@ -239,6 +239,14 @@ To install it and the Gatsby plugin:
 npm install --save gatsby-plugin-react-helmet react-helmet
 ```
 
+Then it must be as ever added to _gatsby-config.js_ file.
+
+After that a seo.js component is created, which initializes all the header metas and other information, ant this is added to the _blog-post.js_ template.
+
+Although it is not part of the tutorial I also added the SEO component to the _index.js_.
+
+This should improve the audit puntuation.
+
 <br />
 <br />
 
