@@ -21,7 +21,7 @@ function Layout({ children }) {
     <div
       css={css`
         margin: 0 auto;
-        max-width: 700px;
+        max-width: 1024px;
         padding: ${rhythm(2)};
         padding-top: ${rhythm(1.5)};
       `}
