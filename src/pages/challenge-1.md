@@ -147,7 +147,97 @@ Finally, the _index.js_ file will be updated adding a link to each element in th
 
 ## 8. Programmatically create pages from data
 
-[I didn't complete it yet]
+Here we optimize the website SEO, performance following best practices. The first step is to build and serve the site in order to be able ro test it using Chrome Lighthouse Tool.
+
+To build the site:
+
+```
+gatsby builds
+```
+
+And to serve it:
+
+```
+gatsby serve
+```
+
+This serve the site under http://localhost:9000. After running the audit, we get many recomendations.
+
+1. Add a manifest file
+
+This can be done automaticcaly with a gatsby plugin, _gatsby-plugin-manifest_. To install it:
+
+```
+npm install --save gatsby-plugin-manifest
+```
+
+And then adding it to _gatsby-config.js_ file:
+
+```javascript
+module.exports = {
+  ...,
+  plugins: [
+    ...,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+  ]
+}
+```
+
+2. Add offline support
+
+In order to qualify as a PWA, a website must use a service worker. Gatsby will add one for us thanks to a plugin again, _gatsby-plugin-offline_. To insall it:
+
+```
+npm install --save gatsby-plugin-offline
+```
+
+And for adding ti to the _gatsby-config.js_ file:
+
+```javascript
+module.exports = {
+  ...,
+  plugins: [
+    ...,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#6b37bf`,
+        theme_color: `#6b37bf`,
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`,
+  ]
+}
+```
+
+3. Add page metadata
+   The last step is to add metadata to the pages. We will be doing this with _React Helmet_
+
+To install it and the Gatsby plugin:
+
+```
+npm install --save gatsby-plugin-react-helmet react-helmet
+```
 
 <br />
 <br />
@@ -156,3 +246,7 @@ Finally, the _index.js_ file will be updated adding a link to each element in th
 
 [Gatsby tutorials](https://www.gatsbyjs.org/tutorial/)<br />
 [Go to the official Gatsby Challenge 1 site](https://www.gatsbyjs.org/blog/100days/start-blog/)
+
+```
+
+```

@@ -16,5 +16,4 @@ From now on, I will be working in a _develop_ branch and when I am ready I will 
 
 ## Resources
 
-[Gatsby tutorials](https://www.gatsbyjs.org/tutorial/)<br />
-[Go to the official Gatsby Challenge 1 site](https://www.gatsbyjs.org/blog/100days/start-blog/)
+[Go to the official Gatsby Challenge 2 site](https://www.gatsbyjs.org/blog/100days/free-hosting/)
