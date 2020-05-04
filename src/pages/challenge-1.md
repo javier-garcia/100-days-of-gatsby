@@ -1,6 +1,7 @@
 ---
 title: "Challenge-1 (Day 1)"
 date: "2020-04-12 00:15"
+featuredImage: "../images/image.jpg"
 ---
 
 The first challenge consists on following the Gatsby fundamental and intermediate tutorials, with a total of 8 steps.
